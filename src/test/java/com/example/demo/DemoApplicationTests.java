@@ -16,7 +16,6 @@ class DemoApplicationTests {
 
     @Test
     public void demo() {
- //       open("www.google.com");
         String path = this.getClass().getResource("/Html_Root.html").getPath();
         open("file:///"+path);
         WebDriver driver = driver ().getWebDriver ();
@@ -32,6 +31,10 @@ class DemoApplicationTests {
     private static WebElement getShadowRoot(WebDriver driver,WebElement shadowHost) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         return (WebElement) js.executeScript("return arguments[0].shadowRoot", shadowHost);
+    }
+    public static WebElement getShadowElement(WebDriver driver,WebElement shadowHost, String cssOfShadowElement) {
+        WebElement shardowRoot = getShadowRoot(driver, shadowHost);
+        return shardowRoot.findElement(By.cssSelector(cssOfShadowElement));
     }
 
 }

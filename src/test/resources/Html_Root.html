@@ -10,8 +10,14 @@
         var host = document.querySelector('div');
         var root = host.createShadowRoot();
         var inputEle = document.createElement('input');
-        inputEle.value="123"
+        var dropDownList = document.createElement('select');
+        inputEle.value="123";
+
+        dropDownList.insertAdjacentHTML("beforeend"," <option value='volvo'>Volvo</option>")
+        dropDownList.insertAdjacentHTML("beforeend","<option value='saab'>saab</option>")
+
         root.appendChild(inputEle);
+        root.appendChild(dropDownList);
 
     </script>
 </form>
