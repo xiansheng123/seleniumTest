@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<form>
+<div>
+
+    <button>Hello, world!</button>
+</div>
+
+    <script>
+        var host = document.querySelector('div');
+        var root = host.createShadowRoot();
+        var inputEle = document.createElement('input');
+        inputEle.value="123"
+        root.appendChild(inputEle);
+
+    </script>
+</form>
+
+</html>
